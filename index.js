@@ -11,13 +11,13 @@ const app = express()
 mongoose.connect('mongodb://isen:dwes@daw2:27017/miapp?authSource=admin') //indicar a mongoose donde se tiene que conectar...miapp es la base de datos donde vamos a escribir, y auth es el nivel de autorizacion
 
 app.get('/', async (_req, res) => {
-  console.log('listando... animales...')
+  console.log('listando... guiris...')
   const animales = await Animal.find(); //busca a todos los animales en base de datos y los devuelve
   return res.send(animales)
 })
 app.get('/crear', async (_req, res) => {
   console.log('creando...')
-  await Animal.create({ tipo: 'gatos', estado: 'Feliz' }) //crea un animal el cual va a ser tipo ANIMAL y su estado va a ser FELIZ, y luego nos devuelve un OK
+  await Animal.create({ tipo: 'extranjero', estado: 'saquenme' }) //crea un animal el cual va a ser tipo ANIMAL y su estado va a ser FELIZ, y luego nos devuelve un OK
   return res.send('ok')
 })
 
